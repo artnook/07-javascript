@@ -102,6 +102,121 @@
       console.log(`b: ${b}`);
     </script>
 
+    <!-- 함수 -->
     <h2>Function</h2>
+    <script>
+      // 함수 선언
+      function helloFunc() {
+        // 함수 실행 코드
+        console.log(1 + 2);
+      }
+      // 함수 호출
+      helloFunc();
+
+      // 함수 내보내기
+      function returnFunc() {
+        return 1 + 2;
+      }
+
+      let returna = returnFunc();
+
+      console.log(returna);
+
+      // 함수 재사용
+      function sum(c, d) {
+        return c + d;
+      }
+      let newA = sum(10, 5);
+      let newB = sum(30, 50);
+      console.log(newA);
+      console.log(newB);
+
+      // 익명 함수
+      let world = function () {
+        console.log("world");
+      };
+
+      world();
+    </script>
+
+    <!-- 조건문 -->
+    <h2>if, else</h2>
+    <script>
+      let sleep = true;
+      let have = false;
+
+      if (sleep) {
+        console.log("ㅠ_ㅠ");
+      }
+
+      if (have) {
+        console.log("^_^");
+      }
+
+      let math = true;
+      if (math) {
+        // 참일경우
+        console.log("참 잘했어요");
+      } else {
+        // 거짓일경우
+        console.log("좀 더 노력하세요");
+      }
+    </script>
+
+    <!-- 요소 찾기 -->
+    <h2>Element</h2>
+    <div class="box">Box!!</div>
+    <script>
+      let boxEl = document.querySelector(".box");
+
+      boxEl.addEventListener("click", function () {
+        // 실행 코드
+        console.log("click");
+      });
+    </script>
+    <!-- 요소찾기 / 검색 -->
+    <div class="box2">Box2!!</div>
+    <script>
+      let box2El = document.querySelector(".box2");
+
+      box2El.classList.add("active");
+      let isContains = box2El.classList.contains("active");
+
+      console.log(isContains);
+
+      box2El.classList.remove("active");
+      console.log(box2El.classList.contains("active"));
+    </script>
+
+    <h2>forEach</h2>
+    <div class="box3">1</div>
+    <div class="box3">2</div>
+    <div class="box3">3</div>
+    <div class="box3">4</div>
+    <script>
+      let box3Els = document.querySelectorAll(".box3");
+      console.log(box3Els);
+
+      box3Els.forEach(function (box3El, index) {
+        box3El.classList.add(`order-${index + 1}`);
+        console.log(index, box3El);
+      });
+    </script>
+
+    <h2>Getter, Setter</h2>
+    <div class="box4">1</div>
+    <div class="box4">2</div>
+    <div class="box4">3</div>
+    <div class="box4">4</div>
+    <script>
+      let box4El = document.querySelector(".box4");
+
+      // Getter, 값을 얻는 용도
+      console.log(box4El.textContent);
+
+      // Setter, 값을 지정하는 용도
+      box4El.textContent = "artnook";
+      console.log(box4El.textContent);
+    </script>
   </body>
 </html>
